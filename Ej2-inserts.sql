@@ -16,11 +16,10 @@ insert into paises (idpais, nombre, independencia, idContinente, forma_de_gobier
 insert into paises (idpais, nombre, independencia, idContinente, forma_de_gobierno, poblacion_estimada) values (19, 'Filipinas','1898-06-12',5,'Republica',100699395);
 insert into paises (idpais, nombre, independencia, idContinente, forma_de_gobierno, poblacion_estimada) values (20, 'Japon','1873-02-11',5,'Monarquia constitucional',126958472);
 
-insert into censos (idPais, anio, poblacion) values (1,2010,42000000);
-insert into censos (idPais, anio, poblacion) values (1,2000,38000000);
 insert into censos (idPais, anio, poblacion) values (1,1990,32000000);
+insert into censos (idPais, anio, poblacion) values (1,2000,38000000);
 insert into censos (idPais, anio, poblacion) values (1,2004,40100100);
-
+insert into censos (idPais, anio, poblacion) values (1,2010,42000000);
 insert into censos (idPais, anio, poblacion) values (11,1990,20000000);
 insert into censos (idPais, anio, poblacion) values (11,2000,25000000);
 insert into censos (idPais, anio, poblacion) values (11,2010,27000000);
