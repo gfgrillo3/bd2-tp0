@@ -30,7 +30,7 @@ CREATE TABLE fronteras(
 	idFrontera SERIAL PRIMARY KEY,
 	idPais1 int,
 	idPais2 int,
-	extension_km varchar(20),
+	extension_km int,
 	FOREIGN KEY (idPais1) REFERENCES paises(idPais),
 	FOREIGN KEY (idPais2) REFERENCES paises(idPais)
 	);

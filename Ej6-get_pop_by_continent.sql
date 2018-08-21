@@ -3,7 +3,7 @@ create or replace function get_pop_by_continent(continente integer) returns bigi
 as
 $$
 
-select sum(poblacion_estimada) as total from pais
+select sum(poblacion_estimada) as total from paises
 where idContinente = continente
 
 $$
