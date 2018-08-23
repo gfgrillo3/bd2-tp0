@@ -1,32 +1,19 @@
 create
 or replace
-function get_pop_variation_rate( idpais integer ) returns bigint as $$
-
-SELECT 
-	*,
-    c1.poblacion - c2.poblacion as diferencia,
-    (c1.poblacion / c1.anio) / (c2.poblacion / c2.anio) as tasa
-FROM
-    censos c1,
-    censos c2
-WHERE
-	c1.idPais = 11
-    AND c2.idPais = 11
-    AND c1.anio > c2.anio
-ORDER BY
-	diferencia
+function get_pop_variation_rate( idpais integer ) returns double precision as $$
 
 select
-	sum( poblacion )
+	(c1.poblacion / c1.anio)::float / (c2.poblacion / c2.anio)::float
 from
-	(
-	select
-		c.anio,
-		c.poblacion
-	from
-		censos as c
-	where
-		c.idpais = idpais
-	order by
-		anio desc fetch first 2 rows only ) as ultimosCensos;
+	censos c1,
+	censos c2
+where
+	c1.idPais = $1
+	and c2.idPais = $1
+	and c1.anio > c2.anio
+order by
+	c1.anio desc,
+	c2.anio desc 
+fetch first 1 rows only 
+
 $$ language sql;
